@@ -32,10 +32,14 @@ pipeline {
             }
         }
 
-        stage("Deploy")
+        stage("Build Images")
         {
             steps{
-                sh 'echo this is Deploy'
+                
+                sh """
+                docker build -t manohar1481/backend:${appVersion} .
+                docker images
+                """
 
             }
         }
