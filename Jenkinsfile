@@ -6,6 +6,7 @@ pipeline {
         timeout(time: 30, units: 'MINUTES')
         disableConcurrentBuilds()
     }
+    
     environment{
         DEBUG='true'
         appVersion='' // this is global varibale you can use this across pipeline.
