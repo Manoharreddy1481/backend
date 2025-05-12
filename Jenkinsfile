@@ -5,7 +5,7 @@ pipeline {
     options{
         timeout(time: 30, unit: 'MINUTES')
         disableConcurrentBuilds()
-        
+
     }
 
     environment{
@@ -18,7 +18,7 @@ pipeline {
             steps{
                 script{
                     def packageJson = readJSON file: 'package.json'
-                    appVersion = package.json
+                    appVersion = packageJson.version
                     echo 'App Version: ${appVersion}'
                 }
                 
